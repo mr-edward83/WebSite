@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotographyByDrewry</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #f0f0f0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+
+        header img.logo {
+            height: 70px;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        #lightbox:active {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.jpeg" class="logo" alt="Site Logo">
+        <h1>PhotographyByDrewry</h1>
+    </header>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="">
+    </div>
+
+    <script>
+        // Auto-load all images in /images folder
+        const gallery = document.getElementById("gallery");
+
+        // List of image extensions to check
+        const extensions = ["jpg", "jpeg", "png", "webp"];
+
+        // Try loading images numbered 1–500 (safe upper limit)
+        for (let i = 1; i <= 500; i++) {
+            extensions.forEach(ext => {
+                const img = new Image();
+                img.src = `images/photo${i}.${ext}`;
+                img.onload = () => {
+                    img.onclick = () => openLightbox(img.src);
+                    gallery.appendChild(img);
+                };
+            });
+        }
+
+        // Lightbox functions
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.display = "flex";
+        }
+
+        lightbox.onclick = () => {
+            lightbox.style.display = "none";
+        };
+    </script>
+
+</body>
+</html>
