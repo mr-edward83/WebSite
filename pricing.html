@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Photography by Drewry</title>
+    <meta name="description" content="Photography by Drewry — session packages, print pricing, canvas prints, landscape fine art, and astrophotography prints. Alma, Arkansas.">
+    <style>
+
+        /* =============================================
+           BASE — matches your existing site exactly
+        ============================================= */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #f0f0f0;
+            text-align: center;
+        }
+
+        /* =============================================
+           HEADER — identical to index.html
+        ============================================= */
+        header {
+            padding: 40px 20px 30px;
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+        header img {
+            height: 110px;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        header h1 {
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin: 10px 0 5px;
+            font-size: 2.2rem;
+        }
+        header p.tagline {
+            font-size: 0.95rem;
+            opacity: 0.5;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* =============================================
+           NAV — matches your site link style
+        ============================================= */
+        nav {
+            background: #111;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.92rem;
+            padding: 8px 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+        nav a:hover {
+            background: #1a1a1a;
+            transform: scale(1.04);
+            border-color: #555;
+        }
+        nav a.active {
+            border-color: #888;
+            background: #1a1a1a;
+        }
+        nav a.party-link {
+            border-color: #1a4fa8;
+            color: #7aadff;
+        }
+        nav a.party-link:hover {
+            background: #0d3a8c;
+            color: #fff;
+        }
+
+        /* =============================================
+           PAGE INTRO
+        ============================================= */
+        .page-intro {
+            max-width: 700px;
+            margin: 50px auto 10px;
+            padding: 0 20px;
+        }
+        .page-intro h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            color: #fff;
+        }
+        .page-intro p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            opacity: 0.75;
+        }
+        .gold-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #c9a84c, #f0d580);
+            margin: 18px auto 28px;
+            border-radius: 2px;
+        }
+
+        /* =============================================
+           SECTION HEADERS
+        ============================================= */
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 1.7rem;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .section-desc {
+            font-size: 0.95rem;
+            opacity: 0.65;
+            max-width: 580px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        /* =============================================
+           SECTIONS
+        ============================================= */
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        section:nth-child(even) {
+            background: #0a0a0a;
+        }
+
+        /* =============================================
+           PACKAGE CARDS
+        ============================================= */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .pkg-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .pkg-card:hover {
+            transform: translateY(-4px);
+            border-color: #444;
+        }
+        .pkg-card.featured {
+            border-color: #c9a84c;
+        }
+        .pkg-head {
+            background: #161616;
+            padding: 22px 22px 18px;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+        .pkg-head.gold { border-top: 3px solid #c9a84c; }
+        .pkg-badge {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 8px;
+        }
+        .pkg-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .pkg-price {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #f0d580;
+            line-height: 1;
+        }
+        .pkg-price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+        .pkg-body {
+            padding: 20px 22px;
+        }
+        .pkg-features {
+            list-style: none;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+        .pkg-features li {
+            padding: 7px 0;
+            border-bottom: 1px solid #1e1e1e;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            opacity: 0.85;
+        }
+        .pkg-features li:last-child { border-bottom: none; }
+        .pkg-features li::before {
+            content: '✦';
+            color: #c9a84c;
+            font-size: 0.7rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .pkg-cta {
+            display: block;
+            margin: 18px 22px 22px;
+            padding: 11px 0;
+            background: transparent;
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: #f0f0f0;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .pkg-cta:hover {
+            background: #1a1a1a;
+            border-color: #c9a84c;
+            color: #f0d580;
+        }
+        .pkg-card.featured .pkg-cta {
+            border-color: #c9a84c;
+            color: #f0d580;
+        }
+
+        /* =============================================
+           COMPARISON TABLE
+        ============================================= */
+        .table-wrap {
+            max-width: 980px;
+            margin: 0 auto 10px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            text-align: left;
+        }
+        thead th {
+            background: #161616;
+            color: #c9a84c;
+            padding: 12px 16px;
+            border-bottom: 1px solid #333;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        thead th:first-child { color: #888; }
+        tbody tr {
+            border-bottom: 1px solid #1a1a1a;
+            transition: background 0.15s;
+        }
+        tbody tr:hover { background: #111; }
+        tbody td {
+            padding: 11px 16px;
+            opacity: 0.82;
+            vertical-align: middle;
+        }
+        tbody td:first-child {
+            color: #aaa;
+            font-size: 0.83rem;
+            letter-spacing: 0.3px;
+        }
+        .check { color: #c9a84c; font-size: 1rem; }
+        .dash  { color: #333; }
+
+        /* =============================================
+           PRICING TABLE (prints)
+        ============================================= */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .price-block {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .price-block-head {
+            background: #161616;
+            padding: 16px 20px;
+            border-bottom: 1px solid #222;
+        }
+        .price-block-head h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+        .price-block-head p {
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 20px;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 0.88rem;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row .size { opacity: 0.75; }
+        .price-row .amt  { color: #f0d580; font-weight: 600; white-space: nowrap; }
+        .price-row .note { font-size: 0.78rem; opacity: 0.45; }
+
+        /* =============================================
+           CANVAS GRID
+        ============================================= */
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* =============================================
+           FINE ART / ASTRO SECTION CARDS
+        ============================================= */
+        .art-section {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .art-header {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px 12px 0 0;
+            padding: 22px 28px;
+            border-bottom: none;
+            text-align: left;
+        }
+        .art-header h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .art-header p {
+            font-size: 0.87rem;
+            opacity: 0.55;
+            line-height: 1.6;
+        }
+        .art-table-wrap {
+            background: #111;
+            border: 1px solid #222;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .art-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+        .art-table thead th {
+            background: #0e0e0e;
+            color: #888;
+            padding: 10px 18px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #222;
+            white-space: nowrap;
+        }
+        .art-table tbody td {
+            padding: 10px 18px;
+            border-bottom: 1px solid #191919;
+            opacity: 0.8;
+        }
+        .art-table tbody tr:last-child td { border-bottom: none; }
+        .art-table tbody tr:hover { background: #131313; }
+        .art-table .price-col { color: #f0d580; font-weight: 600; }
+        .art-table .ltd {
+            font-size: 0.76rem;
+            color: #c9a84c;
+            letter-spacing: 0.5px;
+        }
+
+        /* =============================================
+           CALLOUT BOXES
+        ============================================= */
+        .callout {
+            max-width: 780px;
+            margin: 0 auto 32px;
+            background: #111;
+            border-left: 3px solid #c9a84c;
+            border-radius: 0 10px 10px 0;
+            padding: 18px 22px;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+        .callout strong { color: #f0d580; }
+        .callout.blue-border { border-left-color: #4a7fd4; }
+
+        /* =============================================
+           USB DELIVERY SECTION
+        ============================================= */
+        .usb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .usb-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 24px 18px;
+        }
+        .usb-icon { font-size: 2.2rem; margin-bottom: 10px; }
+        .usb-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .usb-card p {
+            font-size: 0.83rem;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           ADD-ONS
+        ============================================= */
+        .addons-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .addon-pill {
+            background: #111;
+            border: 1px solid #2a2a2a;
+            border-radius: 50px;
+            padding: 10px 22px;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .addon-pill .addon-price {
+            color: #f0d580;
+            font-weight: 600;
+        }
+
+        /* =============================================
+           BOOKING STEPS
+        ============================================= */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .step-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 22px 18px;
+        }
+        .step-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c9a84c;
+            opacity: 0.6;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .step-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .step-card p {
+            font-size: 0.82rem;
+            opacity: 0.55;
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           POLICIES
+        ============================================= */
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .policy-card {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 22px 22px;
+        }
+        .policy-card h4 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 10px;
+        }
+        .policy-card ul {
+            list-style: none;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            line-height: 1.8;
+        }
+        .policy-card ul li::before {
+            content: '— ';
+            color: #444;
+        }
+
+        /* =============================================
+           FOOTER — matches your existing site feel
+        ============================================= */
+        footer {
+            background: #080808;
+            border-top: 1px solid #1a1a1a;
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+        footer .footer-logo {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #f0f0f0;
+            margin-bottom: 6px;
+        }
+        footer .footer-tag {
+            font-size: 0.82rem;
+            opacity: 0.35;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+        .footer-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 0.88rem;
+            padding: 9px 22px;
+            border: 1px solid #222;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+        .footer-links a:hover {
+            background: #111;
+            border-color: #444;
+        }
+        .footer-party {
+            background: #0d1b3e;
+            border: 1px solid #1a3a7a;
+            border-radius: 12px;
+            padding: 18px 24px;
+            max-width: 440px;
+            margin: 0 auto 28px;
+        }
+        .footer-party p {
+            font-size: 0.85rem;
+            opacity: 0.65;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .footer-party a {
+            color: #7aadff;
+            font-size: 0.95rem;
+            text-decoration: underline dotted;
+            letter-spacing: 0.5px;
+        }
+        footer .copy {
+            font-size: 0.75rem;
+            opacity: 0.25;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+        footer .disclaimer {
+            font-size: 0.78rem;
+            opacity: 0.3;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+        }
+
+        /* =============================================
+           RESPONSIVE
+        ============================================= */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            .pkg-price  { font-size: 1.9rem; }
+            .page-intro h2 { font-size: 1.5rem; }
+            .section-title { font-size: 1.35rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- ============================= HEADER ============================= -->
+<header>
+    <img src="logo.jpeg" alt="Photography by Drewry Logo">
+    <h1>Photography by Drewry</h1>
+    <p class="tagline">www.photographybydrewry.com &nbsp;·&nbsp; Alma, Arkansas</p>
+</header>
+
+<!-- ============================= NAV ============================= -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="landscape.html">Landscape</a>
+    <a href="portraits.html">Portraits</a>
+    <a href="astrophotography.html">Astrophotography</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="https://mr-edward83.github.io/drewry-party-rentals" target="_blank" class="party-link">🎉 Party Rentals</a>
+</nav>
+
+<!-- ============================= INTRO ============================= -->
+<div class="page-intro">
+    <h2>Pricing &amp; Packages</h2>
+    <div class="gold-line"></div>
+    <p>
+        Every session, print, and piece of wall art is handled with personal care and
+        artistic intention. All digital images are professionally edited before delivery.
+        Browse the options below or <a href="index.html" style="color:#c9a84c;">contact Michael</a> for a custom quote.
+    </p>
+</div>
+
+<!-- ============================= SESSION PACKAGES ============================= -->
+<section id="sessions">
+    <div class="section-label">Book a Session</div>
+    <div class="section-title">Session Packages</div>
+    <p class="section-desc">
+        All packages include professionally edited images delivered on a
+        USB flash drive plus an online gallery link. A 50% deposit holds your date.
+    </p>
+
+    <div class="packages-grid">
+
+        <!-- ESSENTIALS -->
+        <div class="pkg-card">
+            <div class="pkg-head gold">
+                <div class="pkg-badge">Package 1</div>
+                <div class="pkg-name">The Essentials</div>
+                <div class="pkg-price">$125 <span>/ session</span></div>
+            </div>
+            <div class="pkg-body">
+                <ul class="pkg-features">
+                    <li>1-hour session · 1 location</li>
+                    <li>Up to 2 people</li>
+                    <li>25 professionally edited images</li>
+                    <li>USB flash drive delivery</li>
+                    <li>Online gallery — 30-day access</li>
+                    <li>1 free 4×6 print included</li>
+                    <li>Best for: headshots, single subjects, quick portraits</li>
+                </ul>
+            </div>
+            <a href="index.html" class="pkg-cta">Book This Package</a>
+        </div>
+
+        <!-- CLASSIC -->
+        <div class="pkg-card">
+            <div class="pkg-head gold">
+                <div class="pkg-badge">Package 2</div>
+                <div class="pkg-name">The Classic</div>
+                <div class="pkg-price">$225 <span>/ session</span></div>
+            </div>
+            <div class="pkg-body">
+                <ul class="pkg-features">
+                    <li>90-minute session · up to 2 locations</li>
+                    <li>Up to 4 people</li>
+                    <li>50 professionally edited images</li>
+                    <li>USB flash drive delivery</li>
+                    <li>Online gallery — 60-day access</li>
+                    <li>3 — 4×6 prints + 1 — 5×7 print</li>
+                    <li>Best for: families, couples, senior portraits</li>
+                </ul>
+            </div>
+            <a href="index.html" class="pkg-cta">Book This Package</a>
+        </div>
+
+        <!-- SIGNATURE -->
+        <div class="pkg-card featured">
+            <div class="pkg-head gold">
+                <div class="pkg-badge">⭐ Most Popular — Package 3</div>
+                <div class="pkg-name">The Signature</div>
+                <div class="pkg-price">$350 <span>/ session</span></div>
+            </div>
+            <div class="pkg-body">
+                <ul class="pkg-features">
+                    <li>2-hour session · up to 2 locations</li>
+                    <li>Up to 6 people</li>
+                    <li>80 professionally edited images</li>
+                    <li>USB flash drive delivery</li>
+                    <li>Online gallery — 90-day access</li>
+                    <li>5 — 4×6 + 2 — 5×7 + 1 — 8×10 prints</li>
+                    <li>1 complimentary 11×14 canvas print</li>
+                    <li>Best for: large families, milestone events</li>
+                </ul>
+            </div>
+            <a href="index.html" class="pkg-cta">Book This Package</a>
+        </div>
+
+        <!-- PREMIER -->
+        <div class="pkg-card">
+            <div class="pkg-head gold">
+                <div class="pkg-badge">Package 4</div>
+                <div class="pkg-name">The Premier</div>
+                <div class="pkg-price">$550 <span>/ session</span></div>
+            </div>
+            <div class="pkg-body">
+                <ul class="pkg-features">
+                    <li>3-hour session · multiple locations</li>
+                    <li>Unlimited group size</li>
+                    <li>120+ professionally edited images</li>
+                    <li>USB flash drive delivery</li>
+                    <li>Online gallery — permanent access</li>
+                    <li>10 — 4×6 + 4 — 5×7 + 2 — 8×10 + 1 — 11×14 prints</li>
+                    <li>1 complimentary 16×20 canvas print</li>
+                    <li>Rush delivery option available (+$50)</li>
+                    <li>Best for: corporate, reunions, milestone events</li>
+                </ul>
+            </div>
+            <a href="index.html" class="pkg-cta">Book This Package</a>
+        </div>
+
+    </div><!-- /packages-grid -->
+
+    <!-- ADD-ONS -->
+    <div style="margin-top: 44px;">
+        <div class="section-label" style="margin-bottom:18px;">Add to Any Package</div>
+        <div class="addons-list">
+            <div class="addon-pill">Additional edited image <span class="addon-price">$2 each</span></div>
+            <div class="addon-pill">Additional location <span class="addon-price">+$35</span></div>
+            <div class="addon-pill">Rush delivery (48-hr) <span class="addon-price">+$50</span></div>
+            <div class="addon-pill">Second shooter <span class="addon-price">$75/hr</span></div>
+            <div class="addon-pill">Travel beyond 30 mi <span class="addon-price">$0.67/mile</span></div>
+            <div class="addon-pill">Advanced retouching <span class="addon-price">$10–$25/image</span></div>
+        </div>
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <div style="margin-top: 50px;">
+        <div class="section-label" style="margin-bottom:18px;">Package Comparison</div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Essentials<br><span style="color:#f0d580;">$125</span></th>
+                        <th>Classic<br><span style="color:#f0d580;">$225</span></th>
+                        <th>Signature<br><span style="color:#f0d580;">$350</span></th>
+                        <th>Premier<br><span style="color:#f0d580;">$550</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Session Length</td><td>1 hr</td><td>90 min</td><td>2 hrs</td><td>3 hrs</td></tr>
+                    <tr><td>Locations</td><td>1</td><td>Up to 2</td><td>Up to 2</td><td>Multiple</td></tr>
+                    <tr><td>People</td><td>Up to 2</td><td>Up to 4</td><td>Up to 6</td><td>Unlimited</td></tr>
+                    <tr><td>Edited Images</td><td>25</td><td>50</td><td>80</td><td>120+</td></tr>
+                    <tr><td>USB Delivery</td><td class="check">✦</td><td class="check">✦</td><td class="check">✦</td><td class="check">✦</td></tr>
+                    <tr><td>Online Gallery</td><td>30 days</td><td>60 days</td><td>90 days</td><td>Permanent</td></tr>
+                    <tr><td>Included Prints</td><td>1 — 4×6</td><td>3×4×6, 1×5×7</td><td>5×4×6, 2×5×7, 1×8×10</td><td>10×4×6, 4×5×7, 2×8×10, 1×11×14</td></tr>
+                    <tr><td>Canvas Print</td><td class="dash">—</td><td class="dash">—</td><td>11×14</td><td>16×20</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<!-- ============================= USB DELIVERY ============================= -->
+<section id="usb">
+    <div class="section-label">How You Receive Your Images</div>
+    <div class="section-title">USB Flash Drive Delivery</div>
+    <p class="section-desc">Every session includes full-resolution, print-ready files on a branded USB drive and an online gallery link.</p>
+
+    <div class="usb-grid">
+        <div class="usb-card">
+            <div class="usb-icon">💾</div>
+            <h4>Full Resolution</h4>
+            <p>Print-ready JPEGs at full resolution — suitable for printing up to 30×40 without quality loss.</p>
+        </div>
+        <div class="usb-card">
+            <div class="usb-icon">📦</div>
+            <h4>Packaged &amp; Labeled</h4>
+            <p>USB drives are packaged in a protective case with a custom Photography by Drewry label.</p>
+        </div>
+        <div class="usb-card">
+            <div class="usb-icon">🚚</div>
+            <h4>Delivery Options</h4>
+            <p>Local pickup in Alma, AR — free.<br>USPS First Class — $6 flat.<br>USPS Priority (2-day) — $12 flat.</p>
+        </div>
+        <div class="usb-card">
+            <div class="usb-icon">⏱</div>
+            <h4>Turnaround Time</h4>
+            <p>Standard: 7–10 business days.<br>Rush (48-hr): add $50.<br>Online gallery included with every package.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- ============================= PRINT PRICING ============================= -->
+<section id="prints">
+    <div class="section-label">Prints &amp; Wall Art</div>
+    <div class="section-title">À La Carte Print Pricing</div>
+    <p class="section-desc">
+        Professionally printed on archival photo paper with long-lasting inks.
+        Available in glossy or matte finish. Can be ordered from any session or from the fine art gallery.
+    </p>
+
+    <div class="price-grid">
+
+        <div class="price-block">
+            <div class="price-block-head">
+                <h3>Standard Photo Prints</h3>
+                <p>Glossy or Matte · Archival Quality</p>
+            </div>
+            <div class="price-row"><span class="size">4×6 &nbsp;<span class="note">fits standard frame</span></span><span class="amt">$5</span></div>
+            <div class="price-row"><span class="size">5×7 &nbsp;<span class="note">classic portrait size</span></span><span class="amt">$12</span></div>
+            <div class="price-row"><span class="size">8×10 &nbsp;<span class="note">most popular gift size</span></span><span class="amt">$22</span></div>
+            <div class="price-row"><span class="size">8×12</span><span class="amt">$25</span></div>
+            <div class="price-row"><span class="size">11×14 &nbsp;<span class="note">great wall piece</span></span><span class="amt">$40</span></div>
+            <div class="price-row"><span class="size">12×18</span><span class="amt">$50</span></div>
+            <div class="price-row"><span class="size">16×20 &nbsp;<span class="note">statement wall art</span></span><span class="amt">$75</span></div>
+            <div class="price-row"><span class="size">20×24</span><span class="amt">$95</span></div>
+            <div class="price-row"><span class="size">24×36 &nbsp;<span class="note">large format</span></span><span class="amt">$140</span></div>
+        </div>
+
+        <div class="price-block">
+            <div class="price-block-head">
+                <h3>Print Bundles</h3>
+                <p>Session clients only · Includes shipping</p>
+            </div>
+            <div class="price-row">
+                <span class="size">Memory Bundle<br><span class="note">10 — 4×6 + 5 — 5×7</span></span>
+                <span class="amt">$85 <span class="note" style="color:#4a7;"> save $20</span></span>
+            </div>
+            <div class="price-row">
+                <span class="size">Wall Gallery Bundle<br><span class="note">1 — 8×10 + 2 — 5×7 + 4 — 4×6</span></span>
+                <span class="amt">$95 <span class="note" style="color:#4a7;"> save $22</span></span>
+            </div>
+            <div class="price-row">
+                <span class="size">Heirloom Bundle<br><span class="note">1 — 16×20 + 1 — 11×14 + 2 — 8×10 + 4 — 5×7</span></span>
+                <span class="amt">$210 <span class="note" style="color:#4a7;"> save $42</span></span>
+            </div>
+
+            <div class="price-block-head" style="margin-top:4px; border-top:1px solid #222;">
+                <h3>Shipping Info</h3>
+                <p>Standard orders shipped flat or in protective tube</p>
+            </div>
+            <div class="price-row"><span class="size">Local pickup — Alma, AR</span><span class="amt">Free</span></div>
+            <div class="price-row"><span class="size">USPS standard shipping</span><span class="amt">$8–$18</span></div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================= CANVAS PRINTS ============================= -->
+<section id="canvas">
+    <div class="section-label">Premium Wall Art</div>
+    <div class="section-title">Canvas Prints</div>
+    <p class="section-desc">
+        Gallery-wrapped on a solid wooden frame — stretched, ready to hang.
+        Image wraps around the edges for a professional, museum-quality look.
+        Available in portrait, landscape, or square orientations.
+    </p>
+
+    <div class="canvas-grid">
+
+        <div class="price-block">
+            <div class="price-block-head">
+                <h3>Canvas Print Sizes</h3>
+                <p>Gallery wrap included · Ready to hang</p>
+            </div>
+            <div class="price-row"><span class="size">8×10</span><span class="amt">$65</span></div>
+            <div class="price-row"><span class="size">11×14</span><span class="amt">$95</span></div>
+            <div class="price-row"><span class="size">12×16</span><span class="amt">$110</span></div>
+            <div class="price-row"><span class="size">16×20 &nbsp;<span class="note">popular choice</span></span><span class="amt">$145</span></div>
+            <div class="price-row"><span class="size">20×24</span><span class="amt">$175</span></div>
+            <div class="price-row"><span class="size">24×30</span><span class="amt">$220</span></div>
+            <div class="price-row"><span class="size">24×36</span><span class="amt">$265</span></div>
+            <div class="price-row"><span class="size">30×40 &nbsp;<span class="note">dramatic centerpiece</span></span><span class="amt">$320</span></div>
+            <div class="price-row"><span class="size">36×48 &nbsp;<span class="note">statement piece</span></span><span class="amt">$395</span></div>
+        </div>
+
+        <div class="price-block">
+            <div class="price-block-head">
+                <h3>Canvas Options</h3>
+                <p>All included at no extra charge</p>
+            </div>
+            <div class="price-row"><span class="size">Gallery wrap (image wraps edges)</span><span class="amt">Included</span></div>
+            <div class="price-row"><span class="size">Mirror wrap (edges mirror image)</span><span class="amt">Included</span></div>
+            <div class="price-row"><span class="size">Color wrap (solid color edge)</span><span class="amt">Included</span></div>
+            <div class="price-row"><span class="size">Floating frame — black or brown</span><span class="amt">+$45–$85</span></div>
+
+            <div class="price-block-head" style="margin-top:4px; border-top:1px solid #222;">
+                <h3>Canvas Gallery Wall Sets</h3>
+                <p>Set of 3 canvases — save on the bundle</p>
+            </div>
+            <div class="price-row">
+                <span class="size">Small Set<br><span class="note">Three 8×10 canvases</span></span>
+                <span class="amt">$165 <span class="note" style="color:#4a7;"> save $30</span></span>
+            </div>
+            <div class="price-row">
+                <span class="size">Standard Set<br><span class="note">16×20 + 11×14 + 8×10</span></span>
+                <span class="amt">$270 <span class="note" style="color:#4a7;"> save $35</span></span>
+            </div>
+            <div class="price-row">
+                <span class="size">Statement Set<br><span class="note">24×36 + 16×20 + 11×14</span></span>
+                <span class="amt">$460 <span class="note" style="color:#4a7;"> save $45</span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="callout" style="margin-top:28px;">
+        <strong>Production Time:</strong> Allow 7–14 business days for canvas production and delivery.
+        Local delivery available in the Alma / Fort Smith area.
+        Canvas orders ship in heavy-duty protective packaging.
+    </div>
+
+</section>
+
+<!-- ============================= LANDSCAPE FINE ART ============================= -->
+<section id="landscape">
+    <div class="section-label">Fine Art Prints</div>
+    <div class="section-title">Landscape Photography</div>
+    <p class="section-desc">
+        Gallery-quality fine art prints capturing the natural beauty of the Arkansas River Valley,
+        the Ouachita Mountains, the Ozarks, and beyond. Each image is individually selected,
+        edited to museum standard, and printed on premium archival materials.
+        No session required — purchase directly from the gallery.
+    </p>
+
+    <div class="art-section">
+        <div class="art-header">
+            <h3>Landscape Fine Art Print Pricing</h3>
+            <p>Browse the full gallery at <strong>www.photographybydrewry.com</strong> · Contact Michael to order a specific image or request a custom size.</p>
+        </div>
+        <div class="art-table-wrap">
+            <table class="art-table">
+                <thead>
+                    <tr>
+                        <th>Print Size</th>
+                        <th>Photo Paper</th>
+                        <th>Canvas</th>
+                        <th>Limited Edition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>5×7</td><td class="price-col">$18</td><td class="dash">—</td><td class="dash">—</td></tr>
+                    <tr><td>8×10</td><td class="price-col">$32</td><td class="price-col">$75</td><td class="dash">—</td></tr>
+                    <tr><td>11×14</td><td class="price-col">$55</td><td class="price-col">$110</td><td class="dash">—</td></tr>
+                    <tr><td>16×20</td><td class="price-col">$90</td><td class="price-col">$155</td><td class="price-col">$145 paper / $250 canvas</td></tr>
+                    <tr><td>20×24</td><td class="price-col">$120</td><td class="price-col">$190</td><td class="dash">—</td></tr>
+                    <tr><td>24×36</td><td class="price-col">$165</td><td class="price-col">$285</td><td class="price-col">$265 paper / $425 canvas</td></tr>
+                    <tr><td>30×40</td><td class="price-col">$210</td><td class="price-col">$340</td><td class="price-col">$335 paper / $535 canvas</td></tr>
+                    <tr><td>36×48</td><td class="price-col">$275</td><td class="price-col">$410</td><td class="dash">—</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="callout" style="margin-top: 28px;">
+        <strong>Subject Categories:</strong> Arkansas River Valley · Ouachita &amp; Ozark Mountains · Sunrise &amp; Sunset ·
+        Rural Arkansas &amp; Farmland · Waterways, Rivers &amp; Lakes · Seasonal Foliage · Storm &amp; Dramatic Sky Photography
+    </div>
+
+    <div class="callout" style="margin-top: 14px;">
+        <strong>Limited Edition Prints:</strong> Select landscape images are offered as numbered limited editions (e.g., "1 of 25").
+        Each is signed by Michael Drewry with a certificate of authenticity.
+        Available only until the edition sells out — priced at a 40–60% premium over standard pricing.
+    </div>
+
+</section>
+
+<!-- ============================= ASTROPHOTOGRAPHY FINE ART ============================= -->
+<section id="astrophotography">
+    <div class="section-label">Fine Art Prints</div>
+    <div class="section-title">Astrophotography</div>
+    <p class="section-desc">
+        The night sky captured from dark-sky locations across rural Arkansas.
+        Milky Way, star trails, nebulae, lunar photography, and deep sky objects —
+        each requiring specialized equipment, long exposures, and extensive post-processing.
+        Astrophotography prints are some of the most unique and striking wall art available.
+        <br><br>
+        <em style="color:#c9a84c; font-size:0.88rem;">Recommend 16×20 minimum to fully appreciate star density, color gradients, and detail.</em>
+    </p>
+
+    <div class="art-section">
+        <div class="art-header">
+            <h3>Astrophotography Fine Art Print Pricing</h3>
+            <p>Priced to reflect the technical complexity, specialized equipment, and extensive editing required for each image.</p>
+        </div>
+        <div class="art-table-wrap">
+            <table class="art-table">
+                <thead>
+                    <tr>
+                        <th>Print Size</th>
+                        <th>Photo Paper</th>
+                        <th>Canvas</th>
+                        <th>Limited Edition (15 per image)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>8×10</td><td class="price-col">$45</td><td class="price-col">$95</td><td class="dash">—</td></tr>
+                    <tr><td>11×14</td><td class="price-col">$75</td><td class="price-col">$135</td><td class="dash">—</td></tr>
+                    <tr><td>16×20 &nbsp;<span class="ltd">★ recommended minimum</span></td><td class="price-col">$120</td><td class="price-col">$185</td><td class="price-col">$200 paper / $300 canvas</td></tr>
+                    <tr><td>20×24</td><td class="price-col">$160</td><td class="price-col">$225</td><td class="dash">—</td></tr>
+                    <tr><td>24×36</td><td class="price-col">$225</td><td class="price-col">$325</td><td class="price-col">$375 paper / $510 canvas</td></tr>
+                    <tr><td>30×40</td><td class="price-col">$295</td><td class="price-col">$415</td><td class="price-col">$475 paper / $665 canvas</td></tr>
+                    <tr><td>36×48</td><td class="price-col">$375</td><td class="price-col">$510</td><td class="dash">—</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="callout" style="margin-top: 28px;">
+        <strong>Subject Categories:</strong> Milky Way Core (May–October season) · Star Trail Photography ·
+        Lunar Photography · Planetary Photography (Jupiter, Saturn, Venus) · Nebulae &amp; Deep Sky Objects ·
+        Night Sky Over Arkansas Landscapes · Meteor Shower Photography
+    </div>
+
+    <div class="callout" style="margin-top:14px;">
+        <strong>All Astrophotography Prints Are Available as Limited Editions</strong> — numbered, signed, with certificate of authenticity.
+        Limited to 15 prints per image. Once sold out, that edition is permanently closed.
+    </div>
+
+</section>
+
+<!-- ============================= BOOKING PROCESS ============================= -->
+<section id="booking">
+    <div class="section-label">Getting Started</div>
+    <div class="section-title">How to Book or Order</div>
+    <p class="section-desc">Sessions and print orders are simple to set up. Here's how it works.</p>
+
+    <div style="margin-bottom: 44px;">
+        <div class="section-label" style="margin-bottom:16px;">For Sessions</div>
+        <div class="steps-grid">
+            <div class="step-card"><div class="step-num">01</div><h4>Contact Michael</h4><p>Reach out via www.photographybydrewry.com or phone/text to discuss your session.</p></div>
+            <div class="step-card"><div class="step-num">02</div><h4>Choose a Package</h4><p>Select from The Essentials, Classic, Signature, or Premier — or ask about custom options.</p></div>
+            <div class="step-card"><div class="step-num">03</div><h4>Reserve Your Date</h4><p>A 50% deposit holds your session date. Balance is due on or before the session day.</p></div>
+            <div class="step-card"><div class="step-num">04</div><h4>Receive Your Images</h4><p>Edited gallery delivered on USB (and online) within 7–10 business days. Rush available (+$50).</p></div>
+        </div>
+    </div>
+
+    <div>
+        <div class="section-label" style="margin-bottom:16px;">For Print &amp; Canvas Orders</div>
+        <div class="steps-grid">
+            <div class="step-card"><div class="step-num">01</div><h4>Browse the Gallery</h4><p>View the full landscape and astrophotography gallery at www.photographybydrewry.com.</p></div>
+            <div class="step-card"><div class="step-num">02</div><h4>Select Your Image &amp; Size</h4><p>Choose your preferred print size, finish (glossy/matte), and whether you'd like photo paper or canvas.</p></div>
+            <div class="step-card"><div class="step-num">03</div><h4>Place Your Order</h4><p>Full payment at time of order. Custom sizes available — just ask.</p></div>
+            <div class="step-card"><div class="step-num">04</div><h4>Production &amp; Delivery</h4><p>Allow 7–14 business days. Canvas ships in protective packaging. Prints shipped flat or in a tube.</p></div>
+        </div>
+    </div>
+
+    <div class="callout blue-border" style="margin-top:36px;">
+        <strong>Payment Methods Accepted:</strong> Cash · Venmo · PayPal · CashApp · Check (payable to Photography by Drewry) · Credit/Debit Card via PayPal or Square
+    </div>
+
+</section>
+
+<!-- ============================= POLICIES ============================= -->
+<section id="policies">
+    <div class="section-label">Important Information</div>
+    <div class="section-title">Policies</div>
+    <p class="section-desc">Clear, fair policies so there are no surprises.</p>
+
+    <div class="policy-grid">
+        <div class="policy-card">
+            <h4>Cancellation</h4>
+            <ul>
+                <li>7+ days prior: full deposit refund</li>
+                <li>3–6 days prior: 50% deposit refund</li>
+                <li>Within 48 hours: no refund</li>
+                <li>Weather cancellation: full reschedule, no charge</li>
+            </ul>
+        </div>
+        <div class="policy-card">
+            <h4>Rescheduling</h4>
+            <ul>
+                <li>1 free reschedule if requested 48+ hrs in advance</li>
+                <li>Second reschedule: $25 fee</li>
+                <li>Weather-related: always rescheduled at no charge</li>
+            </ul>
+        </div>
+        <div class="policy-card">
+            <h4>Copyright &amp; Usage</h4>
+            <ul>
+                <li>Michael Drewry retains full copyright to all images</li>
+                <li>Clients receive a personal use license</li>
+                <li>May print, share on social media, use personally</li>
+                <li>Commercial use requires a separate license</li>
+                <li>Fine art prints: not for reproduction or resale</li>
+            </ul>
+        </div>
+        <div class="policy-card">
+            <h4>Image Editing</h4>
+            <ul>
+                <li>All images professionally color-corrected and edited</li>
+                <li>Basic skin retouching included in all packages</li>
+                <li>Advanced retouching: $10–$25/image additional</li>
+                <li>Up to 3 editing preferences accepted before session</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+    <div class="footer-logo">Photography by Drewry</div>
+    <div class="footer-tag">www.photographybydrewry.com &nbsp;·&nbsp; Alma, Arkansas</div>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="portraits.html">Portraits</a>
+        <a href="astrophotography.html">Astrophotography</a>
+        <a href="pricing.html">Pricing</a>
+    </div>
+
+    <div class="footer-party">
+        <p>Looking to rent a bounce house or inflatable for your next party?<br>Visit our sister company — serving Alma &amp; the Arkansas River Valley.</p>
+        <a href="https://mr-edward83.github.io/drewry-party-rentals" target="_blank">🎉 Drewry Party Rentals →</a>
+    </div>
+
+    <div class="copy">© 2026 Photography by Drewry · All Rights Reserved</div>
+    <div class="disclaimer">
+        Prices subject to change. Contact for custom quotes on large orders, commercial projects, or specialty requests.
+        All prints produced on professional-grade archival materials for lasting quality.
+    </div>
+</footer>
+
+</body>
+</html>
